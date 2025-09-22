@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KARELS HOA.</title>
+  <audio id="bg-audio" autoplay loop>
+    <source src="Welcome To Doxbin.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // play on load
+    const audio = document.getElementById('bg-audio');
+    audio.play().catch(error => {
+      console.log('Autoplay failed:', error);
+
+    });
+  </script>
+  <style>
+    body {
+      background-color: #000000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: rgb(255, 255, 255);
+      font-size: 1em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 9999;
+      text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0);
+      animation-name: fall;
+      animation-timing-function: linear;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+      }
+    }
+  </style>
+
+
+<script>
+  const snowflakeCount = 50; 
+
+  for (let i = 0; i < snowflakeCount; i++) {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.innerText = ".";
+
+    
+    const size = Math.random() * 10 + 10; 
+    const left = Math.random() * window.innerWidth;
+    const duration = Math.random() * 5 + 5; 
+    const delay = Math.random() * 10;
+
+    snowflake.style.fontSize = `${size}px`;
+    snowflake.style.left = `${left}px`;
+    snowflake.style.animationDuration = `${duration}s`;
+    snowflake.style.animationDelay = `${delay}s`;
+
+    document.body.appendChild(snowflake);
+
+    snowflake.addEventListener("animationend", () => {
+      snowflake.remove();
+    });                                                                                                                                                                                                                                                                                                                                                                                                                                             
+  }
+
+  
+  setInterval(() => {
+    const flake = document.createElement("div");
+    flake.classList.add("snowflake");
+    flake.innerText = ".";
+
+    const size = Math.random() * 10 + 10;
+    const left = Math.random() * window.innerWidth;
+    const duration = Math.random() * 5 + 5;
+    const delay = 0;
+
+    flake.style.fontSize = `${size}px`;
+    flake.style.left = `${left}px`;
+    flake.style.animationDuration = `${duration}s`;
+    flake.style.animationDelay = `${delay}s`;
+
+    document.body.appendChild(flake);
+
+    flake.addEventListener("animationend", () => {
+      flake.remove();
+    });
+  }, 300); 
+</script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      background: #222;
+      border-radius: 10px;
+      text-align: center;
+      width: 200px;
+      padding: 15px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .box img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .box h3 {
+      margin: 10px 0 5px;
+    }
+
+    .box a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .box a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+<body>
+
+  <div class="box">
+    <img src="551586716_987887183466857_5683301173172594502_n.jpg" alt="Profile">
+  </div>
+  <div class="box">
+    <h3>Heres how he looks like also made an  edit, take a look :)</h3>
+    <a href="edit.html" target="_blank">edit here</a>
+  </div>
+  
+</body>
+</head>
+</html>

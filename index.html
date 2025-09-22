@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WELCOME MY FELLOW PEOPLE</title>
+  <style>
+    body {
+      background: black;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+h1.title {
+  font-style: italic;
+  font-family: monospace;
+  font-size: 33px;
+  color: rgb(194, 194, 194);
+  margin-bottom: 30px;
+  text-align: center;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+    pre.big {
+      font-family: monospace;
+      font-size: 9px;
+      line-height: 14px;
+      white-space: pre;
+      text-align: center;
+      color: red;
+      animation: flame-flicker 0.8s infinite alternate;
+      margin: 0;
+    }
+
+    @keyframes flame-flicker {
+      0%   { color: #ffffff; }
+      25%  { color: #ffffffc2; }
+      50%  { color: #ffffff; }
+      75%  { color: #000000; }
+      100% { color: #000000; }
+    }
+
+    .pixel-button {
+     font-style: italic;
+      font-family: monospace;
+      font-size: 12px;
+      margin-top: 15px;
+      padding: 5px 10px;
+      color: rgb(54, 53, 53);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: pre;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .pixel-button:hover {
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .pixel-button:active {
+      color: #ffffff;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">HOA OF KAREL LMAOOO X_x</h1>
+
+  <button class="pixel-button" onclick="location.href='hoa.html'">
+    >>> Click me to enter. <<<
+  </button>
+</body>
+</html>
+
+<style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #000; 
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: rgb(255, 255, 255);
+      font-size: 1em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 9999;
+      text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0);
+      animation-name: fall;
+      animation-timing-function: linear;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+      }
+    }
+  </style>
+
+
+<script>
+  const snowflakeCount = 50; 
+
+  for (let i = 0; i < snowflakeCount; i++) {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.innerText = ".";
+
+    
+    const size = Math.random() * 10 + 10; 
+    const left = Math.random() * window.innerWidth;
+    const duration = Math.random() * 5 + 5; 
+    const delay = Math.random() * 10;
+
+    snowflake.style.fontSize = `${size}px`;
+    snowflake.style.left = `${left}px`;
+    snowflake.style.animationDuration = `${duration}s`;
+    snowflake.style.animationDelay = `${delay}s`;
+
+    document.body.appendChild(snowflake);
+
+    snowflake.addEventListener("animationend", () => {
+      snowflake.remove();
+    });                                                                                                                                                                                                                                                                                                                                                                                                                                             
+  }
+
+  
+  setInterval(() => {
+    const flake = document.createElement("div");
+    flake.classList.add("snowflake");
+    flake.innerText = ".";
+
+    const size = Math.random() * 10 + 10;
+    const left = Math.random() * window.innerWidth;
+    const duration = Math.random() * 5 + 5;
+    const delay = 0;
+
+    flake.style.fontSize = `${size}px`;
+    flake.style.left = `${left}px`;
+    flake.style.animationDuration = `${duration}s`;
+    flake.style.animationDelay = `${delay}s`;
+
+    document.body.appendChild(flake);
+
+    flake.addEventListener("animationend", () => {
+      flake.remove();
+    });
+  }, 300); 
+</script>
+</html>

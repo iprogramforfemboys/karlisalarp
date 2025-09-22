@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video with Controls</title>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    video {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body>
+  <video id="player" controls>
+    <source src="IMG_2379.MP4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const player = document.getElementById('player');
+
+    // Log some events just for clarity
+    player.addEventListener('play', () => console.log("Video playing"));
+    player.addEventListener('pause', () => console.log("Video paused"));
+    player.addEventListener('volumechange', () => console.log("Volume changed:", player.volume));
+  </script>
+</body>
+</html>
